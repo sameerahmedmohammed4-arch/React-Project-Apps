@@ -4,6 +4,7 @@ import { useState } from 'react'
 function Counter() {
     const [count, setCount] = useState(0);
     const [prevCount, setprevCount] = useState(0);
+    const isEven = count % 2 === 0;
 
     const increment = () => {
         setprevCount(count)
@@ -26,6 +27,8 @@ function Counter() {
           <button id='btn2' onClick={reset}>Reset</button>
           <button id='btn3' onClick={increment}>+</button>
           <p >Counter changed from {prevCount} to {count}</p>
+          {isEven ? "Even" : "Odd"}
+
     </div>
   )
 }
